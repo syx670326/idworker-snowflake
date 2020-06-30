@@ -1,0 +1,16 @@
+{
+    "properties": [
+        {
+            "name": "idworker.projectid",
+            "type": "java.lang.Integer",
+            "defaultValue": 0,
+            "description": "project id."
+        },
+        {
+            "name": "idworker.nodeid",
+            "type": "java.lang.Integer",
+            "defaultValue": 0,
+            "description": "node id."
+        }
+    ]
+}
