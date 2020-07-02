@@ -1,16 +1,22 @@
 {
-    "properties": [
-        {
-            "name": "idworker.projectid",
-            "type": "java.lang.Integer",
-            "defaultValue": 0,
-            "description": "project id."
-        },
-        {
-            "name": "idworker.nodeid",
-            "type": "java.lang.Integer",
-            "defaultValue": 0,
-            "description": "node id."
-        }
-    ]
+	"properties": [
+		{
+			"name": "idworker.epoch",
+			"type": "java.lang.Long",
+			"defaultValue": 1577836800000,
+			"description": "Start timestamp."
+		},
+		{
+			"name": "idworker.projectid",
+			"type": "java.lang.Integer",
+			"defaultValue": 0,
+			"description": "project id."
+		},
+		{
+			"name": "idworker.nodeid",
+			"type": "java.lang.Integer",
+			"defaultValue": 0,
+			"description": "node id."
+		}
+	]
 }
