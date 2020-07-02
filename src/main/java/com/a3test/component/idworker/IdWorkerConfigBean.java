@@ -5,9 +5,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "idworker")
-public class IdWorkerProperties {
+public class IdWorkerConfigBean {
+    private Long epoch = 1577836800000L;
     private Integer projectid = 0;
     private Integer nodeid = 0;
+
+    public Long getEpoch() {
+        return epoch;
+    }
+
+    public void setEpoch(Long epoch) {
+        this.epoch = epoch;
+    }
 
     public Integer getProjectid() {
         return projectid;

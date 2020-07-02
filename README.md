@@ -1,2 +1,2 @@
 # idworker-snowflake
-Snowflake is a network service for generating unique ID numbers at high scale with some simple guarantees.
+Snowflake is a service for generating unique IDs at high scale with some simple guarantees. These IDs are unique 64-bit unsigned integers, which are based on time, instead of being sequential. The full ID is composed of a timestamp, a project number, a node number, and a sequence number.

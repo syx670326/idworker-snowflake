@@ -4,15 +4,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Snowflake implements IdWorker {
+    private long epoch;
     private long projectId;
     private long nodeId;
 
-    private final long epoch = 1514764800000L;
     private final int projectIdBits = 9;
     private final int nodeIdBits = 3;
     private final int sequenceBits = 10;
-
-    private long sequence;
 
     private final long maxNodeId = -1L ^ (-1L << nodeIdBits);
     private final long maxProjectId = -1L ^ (-1L << projectIdBits);
@@ -22,9 +20,10 @@ public class Snowflake implements IdWorker {
     private final int projectIdShift = sequenceBits + nodeIdBits;
     private final int timestampLeftShift = sequenceBits + nodeIdBits + projectIdBits;
 
+    private long sequence = 0L;
     private long lastTimestamp = -1L;
 
-    public Snowflake(IdWorkerProperties idWorkerProperties) {
+    public Snowflake(IdWorkerConfigBean idWorkerProperties) {
         if (idWorkerProperties.getProjectid() > maxProjectId || idWorkerProperties.getProjectid() < 0) {
             throw new IllegalArgumentException(
                     String.format("projectId can't be greater than %d or less than 0.", maxProjectId));
@@ -33,6 +32,7 @@ public class Snowflake implements IdWorker {
             throw new IllegalArgumentException(
                     String.format("nodeId can't be greater than %d or less than 0.", maxNodeId));
         }
+        this.epoch = idWorkerProperties.getEpoch();
         this.nodeId = idWorkerProperties.getNodeid();
         this.projectId = idWorkerProperties.getProjectid();
     }
