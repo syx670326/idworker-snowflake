@@ -24,7 +24,7 @@ public class Snowflake implements IdWorker {
 
     private long lastTimestamp = -1L;
 
-    public Snowflake(IdWorkerProperties idWorkerProperties) {
+    public Snowflake(IdWorkerConfigBean idWorkerProperties) {
         if (idWorkerProperties.getProjectid() > maxProjectId || idWorkerProperties.getProjectid() < 0) {
             throw new IllegalArgumentException(
                     String.format("projectId can't be greater than %d or less than 0.", maxProjectId));

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "idworker")
-public class IdWorkerProperties {
+public class IdWorkerConfigBean {
     private Integer projectid = 0;
     private Integer nodeid = 0;
 
